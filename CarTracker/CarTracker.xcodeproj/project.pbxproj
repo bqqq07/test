@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B001000001 /* CarTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000001 /* CarTrackerApp.swift */; };
+		B001000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000002 /* ContentView.swift */; };
+		B001000003 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000003 /* PersistenceController.swift */; };
+		B001000004 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000004 /* NotificationManager.swift */; };
+		B001000005 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000005 /* Car.swift */; };
+		B001000006 /* MaintenancePart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000006 /* MaintenancePart.swift */; };
+		B001000007 /* ServiceRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000007 /* ServiceRecord.swift */; };
+		B001000008 /* InspectionIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000008 /* InspectionIssue.swift */; };
+		B001000009 /* PartTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000009 /* PartTemplates.swift */; };
+		B001000010 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000010 /* HomeView.swift */; };
+		B001000011 /* CarsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000011 /* CarsListView.swift */; };
+		B001000012 /* AddCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000012 /* AddCarView.swift */; };
+		B001000013 /* CarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000013 /* CarTabView.swift */; };
+		B001000014 /* CarProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000014 /* CarProfileView.swift */; };
+		B001000015 /* AddPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000015 /* AddPartView.swift */; };
+		B001000016 /* MaintenancePartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000016 /* MaintenancePartsView.swift */; };
+		B001000017 /* PartDetailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000017 /* PartDetailSheet.swift */; };
+		B001000018 /* InspectionIssuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000018 /* InspectionIssuesView.swift */; };
+		B001000019 /* ServiceHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000019 /* ServiceHistoryView.swift */; };
+		B001000020 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000020 /* ExpensesView.swift */; };
+		B001000021 /* DiagnosticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000021 /* DiagnosticsView.swift */; };
+		B001000022 /* CarOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000022 /* CarOnboardingView.swift */; };
+		B001000023 /* CarTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A001000023 /* CarTracker.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A001000001 /* CarTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTrackerApp.swift; sourceTree = "<group>"; };
+		A001000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A001000003 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		A001000004 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		A001000005 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		A001000006 /* MaintenancePart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenancePart.swift; sourceTree = "<group>"; };
+		A001000007 /* ServiceRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRecord.swift; sourceTree = "<group>"; };
+		A001000008 /* InspectionIssue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionIssue.swift; sourceTree = "<group>"; };
+		A001000009 /* PartTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTemplates.swift; sourceTree = "<group>"; };
+		A001000010 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A001000011 /* CarsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListView.swift; sourceTree = "<group>"; };
+		A001000012 /* AddCarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarView.swift; sourceTree = "<group>"; };
+		A001000013 /* CarTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTabView.swift; sourceTree = "<group>"; };
+		A001000014 /* CarProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarProfileView.swift; sourceTree = "<group>"; };
+		A001000015 /* AddPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPartView.swift; sourceTree = "<group>"; };
+		A001000016 /* MaintenancePartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenancePartsView.swift; sourceTree = "<group>"; };
+		A001000017 /* PartDetailSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartDetailSheet.swift; sourceTree = "<group>"; };
+		A001000018 /* InspectionIssuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionIssuesView.swift; sourceTree = "<group>"; };
+		A001000019 /* ServiceHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHistoryView.swift; sourceTree = "<group>"; };
+		A001000020 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
+		A001000021 /* DiagnosticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsView.swift; sourceTree = "<group>"; };
+		A001000022 /* CarOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarOnboardingView.swift; sourceTree = "<group>"; };
+		A001000023 /* CarTracker.xcdatamodeld */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarTracker.xcdatamodeld; sourceTree = "<group>"; };
+		A001000099 /* CarTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C001000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D001000000 /* CarTracker */ = {
+			isa = PBXGroup;
+			children = (
+				D001000001 /* CarTracker */,
+				D001000099 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D001000001 /* CarTracker */ = {
+			isa = PBXGroup;
+			children = (
+				A001000001 /* CarTrackerApp.swift */,
+				A001000002 /* ContentView.swift */,
+				A001000023 /* CarTracker.xcdatamodeld */,
+				D001000002 /* Data */,
+				D001000003 /* Models */,
+				D001000004 /* Utilities */,
+				D001000005 /* Views */,
+			);
+			path = CarTracker;
+			sourceTree = "<group>";
+		};
+		D001000002 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A001000009 /* PartTemplates.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D001000003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A001000005 /* Car.swift */,
+				A001000006 /* MaintenancePart.swift */,
+				A001000007 /* ServiceRecord.swift */,
+				A001000008 /* InspectionIssue.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D001000004 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A001000003 /* PersistenceController.swift */,
+				A001000004 /* NotificationManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D001000005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A001000010 /* HomeView.swift */,
+				D001000006 /* Car */,
+				D001000007 /* Onboarding */,
+				D001000008 /* Diagnostics */,
+				D001000009 /* Expenses */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D001000006 /* Car */ = {
+			isa = PBXGroup;
+			children = (
+				A001000011 /* CarsListView.swift */,
+				A001000012 /* AddCarView.swift */,
+				A001000013 /* CarTabView.swift */,
+				A001000014 /* CarProfileView.swift */,
+				A001000015 /* AddPartView.swift */,
+				A001000016 /* MaintenancePartsView.swift */,
+				A001000017 /* PartDetailSheet.swift */,
+				A001000018 /* InspectionIssuesView.swift */,
+				A001000019 /* ServiceHistoryView.swift */,
+			);
+			path = Car;
+			sourceTree = "<group>";
+		};
+		D001000007 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A001000022 /* CarOnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		D001000008 /* Diagnostics */ = {
+			isa = PBXGroup;
+			children = (
+				A001000021 /* DiagnosticsView.swift */,
+			);
+			path = Diagnostics;
+			sourceTree = "<group>";
+		};
+		D001000009 /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				A001000020 /* ExpensesView.swift */,
+			);
+			path = Expenses;
+			sourceTree = "<group>";
+		};
+		D001000099 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A001000099 /* CarTracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E001000001 /* CarTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F001000002 /* Build configuration list for PBXNativeTarget "CarTracker" */;
+			buildPhases = (
+				G001000001 /* Sources */,
+				C001000001 /* Frameworks */,
+				H001000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CarTracker;
+			productName = CarTracker;
+			productReference = A001000099 /* CarTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E001000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					E001000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = F001000001 /* Build configuration list for PBXProject "CarTracker" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = ar;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				ar,
+				en,
+				Base,
+			);
+			mainGroup = D001000000 /* CarTracker */;
+			productRefGroup = D001000099 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E001000001 /* CarTracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		H001000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		G001000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B001000001 /* CarTrackerApp.swift in Sources */,
+				B001000002 /* ContentView.swift in Sources */,
+				B001000003 /* PersistenceController.swift in Sources */,
+				B001000004 /* NotificationManager.swift in Sources */,
+				B001000005 /* Car.swift in Sources */,
+				B001000006 /* MaintenancePart.swift in Sources */,
+				B001000007 /* ServiceRecord.swift in Sources */,
+				B001000008 /* InspectionIssue.swift in Sources */,
+				B001000009 /* PartTemplates.swift in Sources */,
+				B001000010 /* HomeView.swift in Sources */,
+				B001000011 /* CarsListView.swift in Sources */,
+				B001000012 /* AddCarView.swift in Sources */,
+				B001000013 /* CarTabView.swift in Sources */,
+				B001000014 /* CarProfileView.swift in Sources */,
+				B001000015 /* AddPartView.swift in Sources */,
+				B001000016 /* MaintenancePartsView.swift in Sources */,
+				B001000017 /* PartDetailSheet.swift in Sources */,
+				B001000018 /* InspectionIssuesView.swift in Sources */,
+				B001000019 /* ServiceHistoryView.swift in Sources */,
+				B001000020 /* ExpensesView.swift in Sources */,
+				B001000021 /* DiagnosticsView.swift in Sources */,
+				B001000022 /* CarOnboardingView.swift in Sources */,
+				B001000023 /* CarTracker.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F001000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F001000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F001000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CarTracker/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "للسماح بالتقاط صور للسيارة";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "للسماح بتحديد صور السيارة";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cartracker.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F001000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CarTracker/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "للسماح بالتقاط صور للسيارة";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "للسماح بتحديد صور السيارة";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cartracker.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F001000001 /* Build configuration list for PBXProject "CarTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F001000003 /* Debug */,
+				F001000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F001000002 /* Build configuration list for PBXNativeTarget "CarTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F001000005 /* Debug */,
+				F001000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E001000000 /* Project object */;
+}

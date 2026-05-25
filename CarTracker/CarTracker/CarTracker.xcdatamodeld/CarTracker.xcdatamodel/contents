@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23231" systemVersion="24A335" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Car" representedClassName="Car" syncable="YES" codeGenerationType="none">
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="currentMileage" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary"/>
+        <attribute name="lastMileageUpdate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="make" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="onboardingCompleted" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="plateNumber" optional="YES" attributeType="String"/>
+        <attribute name="sparkPlugType" optional="YES" attributeType="String"/>
+        <attribute name="steeringType" optional="YES" attributeType="String"/>
+        <attribute name="suspensionType" optional="YES" attributeType="String"/>
+        <attribute name="timingType" optional="YES" attributeType="String"/>
+        <attribute name="year" attributeType="Integer 32" defaultValueString="2020" usesScalarValueType="YES"/>
+        <relationship name="issues" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="InspectionIssue" inverseName="car" inverseEntity="InspectionIssue"/>
+        <relationship name="parts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MaintenancePart" inverseName="car" inverseEntity="MaintenancePart"/>
+        <relationship name="serviceRecords" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ServiceRecord" inverseName="car" inverseEntity="ServiceRecord"/>
+    </entity>
+    <entity name="InspectionIssue" representedClassName="InspectionIssue" syncable="YES" codeGenerationType="none">
+        <attribute name="dateAdded" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateResolved" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary"/>
+        <attribute name="issueDescription" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="priority" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <relationship name="car" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="issues" inverseEntity="Car"/>
+    </entity>
+    <entity name="MaintenancePart" representedClassName="MaintenancePart" syncable="YES" codeGenerationType="none">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="intervalKm" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="intervalMonths" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="intervalYears" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isCritical" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="lastChangedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastChangedMileage" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <relationship name="car" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="parts" inverseEntity="Car"/>
+    </entity>
+    <entity name="ServiceRecord" representedClassName="ServiceRecord" syncable="YES" codeGenerationType="none">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="cost" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="mileageAtService" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="partName" optional="YES" attributeType="String"/>
+        <attribute name="workshop" optional="YES" attributeType="String"/>
+        <relationship name="car" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="serviceRecords" inverseEntity="Car"/>
+    </entity>
+</model>
