@@ -8,8 +8,9 @@ final class Coin: SKSpriteNode {
 
     init(value: Int = 1) {
         self.value = value
-        let texture = SKTexture(imageNamed: "coin_00")
-        super.init(texture: texture, color: .clear, size: CGSize(width: 16, height: 16))
+        let coinSize = CGSize(width: 14, height: 14)
+        let texture = SKTexture.circle(color: UIColor(red: 0.95, green: 0.82, blue: 0.1, alpha: 1), radius: 7)
+        super.init(texture: texture, color: .clear, size: coinSize)
         zPosition = Constants.ZPositions.entities
 
         physicsBody = SKPhysicsBody(circleOfRadius: 8)
@@ -25,8 +26,10 @@ final class Coin: SKSpriteNode {
     required init?(coder: NSCoder) { fatalError() }
 
     private func startSpinAnimation() {
-        let frames = (0..<4).map { SKTexture(imageNamed: "coin_0\($0)") }
-        let spin = SKAction.repeatForever(.animate(with: frames, timePerFrame: 0.1))
+        let spin = SKAction.repeatForever(.sequence([
+            .scaleX(to: 0.2, duration: 0.2),
+            .scaleX(to: 1.0, duration: 0.2)
+        ]))
         run(spin, withKey: "spin")
     }
 

@@ -9,13 +9,13 @@ final class JoystickNode: SKNode {
     private var touchID: UITouch?
 
     override init() {
-        base = SKSpriteNode(imageNamed: "joystick_base")
-        base.size = CGSize(width: 120, height: 120)
-        base.alpha = 0.5
+        base = SKSpriteNode(texture: .circle(color: UIColor(white: 1, alpha: 0.15), radius: 60),
+                            size: CGSize(width: 120, height: 120))
+        base.alpha = 1
 
-        thumb = SKSpriteNode(imageNamed: "joystick_thumb")
-        thumb.size = CGSize(width: 56, height: 56)
-        thumb.alpha = 0.7
+        thumb = SKSpriteNode(texture: .circle(color: UIColor(white: 1, alpha: 0.45), radius: 28),
+                             size: CGSize(width: 56, height: 56))
+        thumb.alpha = 1
 
         super.init()
         addChild(base)

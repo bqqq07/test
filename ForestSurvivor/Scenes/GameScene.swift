@@ -69,37 +69,68 @@ final class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     private func setupBackground() {
-        // Ground tile — tiled
-        let ground = SKSpriteNode(imageNamed: "ground_tile")
-        ground.size = Constants.mapSize
-        ground.position = CGPoint(x: Constants.mapSize.width / 2,
-                                  y: Constants.mapSize.height / 2)
+        // Dark green ground
+        let ground = SKSpriteNode(
+            texture: .placeholder(color: UIColor(red: 0.11, green: 0.23, blue: 0.11, alpha: 1),
+                                  size: Constants.mapSize),
+            size: Constants.mapSize
+        )
+        ground.position = CGPoint(x: Constants.mapSize.width / 2, y: Constants.mapSize.height / 2)
         ground.zPosition = Constants.ZPositions.ground
         addChild(ground)
 
-        // Invisible boundary walls
+        // Grid lines for orientation
+        let gridLayer = SKNode()
+        gridLayer.zPosition = Constants.ZPositions.ground + 0.1
+        let gridStep: CGFloat = 200
+        let gridColor = UIColor(white: 1, alpha: 0.04)
+        var x: CGFloat = 0
+        while x <= Constants.mapSize.width {
+            let line = SKShapeNode(rect: CGRect(x: x, y: 0, width: 1, height: Constants.mapSize.height))
+            line.fillColor = gridColor; line.strokeColor = .clear
+            gridLayer.addChild(line)
+            x += gridStep
+        }
+        var y: CGFloat = 0
+        while y <= Constants.mapSize.height {
+            let line = SKShapeNode(rect: CGRect(x: 0, y: y, width: Constants.mapSize.width, height: 1))
+            line.fillColor = gridColor; line.strokeColor = .clear
+            gridLayer.addChild(line)
+            y += gridStep
+        }
+        addChild(gridLayer)
+
+        // Boundary walls
         let body = SKPhysicsBody(edgeLoopFrom: CGRect(origin: .zero, size: Constants.mapSize))
-        body.categoryBitMask    = 0
-        body.collisionBitMask   = 0
-        body.contactTestBitMask = 0
+        body.categoryBitMask = 0; body.collisionBitMask = 0; body.contactTestBitMask = 0
         physicsBody = body
 
         addDecorations()
     }
 
     private func addDecorations() {
-        for _ in 0..<40 {
-            let treeIndex = Int.random(in: 1...5)
-            let tree = SKSpriteNode(imageNamed: "tree_0\(treeIndex)")
-            tree.size = CGSize(width: CGFloat.random(in: 48...96), height: CGFloat.random(in: 64...128))
+        // Trees as green circles
+        for _ in 0..<50 {
+            let r = CGFloat.random(in: 16...40)
+            let tree = SKShapeNode(circleOfRadius: r)
+            tree.fillColor = UIColor(
+                red: CGFloat.random(in: 0.1...0.25),
+                green: CGFloat.random(in: 0.3...0.55),
+                blue: CGFloat.random(in: 0.05...0.15),
+                alpha: 1
+            )
+            tree.strokeColor = UIColor(white: 0, alpha: 0.3)
             tree.position = CGPoint(x: CGFloat.random(in: 0...Constants.mapSize.width),
                                     y: CGFloat.random(in: 0...Constants.mapSize.height))
             tree.zPosition = Constants.ZPositions.decorations
             addChild(tree)
         }
-        for _ in 0..<20 {
-            let rock = SKSpriteNode(imageNamed: "rock_0\(Int.random(in: 1...4))")
-            rock.size = CGSize(width: 24, height: 24)
+        // Rocks as gray squares
+        for _ in 0..<25 {
+            let size = CGFloat.random(in: 8...18)
+            let rock = SKShapeNode(rectOf: CGSize(width: size, height: size), cornerRadius: 3)
+            rock.fillColor = UIColor(white: 0.45, alpha: 1)
+            rock.strokeColor = .clear
             rock.position = CGPoint(x: CGFloat.random(in: 0...Constants.mapSize.width),
                                     y: CGFloat.random(in: 0...Constants.mapSize.height))
             rock.zPosition = Constants.ZPositions.decorations

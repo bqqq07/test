@@ -18,8 +18,15 @@ final class Player: SKNode {
 
     init(stats: PlayerStats) {
         self.stats = stats
-        sprite = SKSpriteNode(imageNamed: "archer_idle_00")
-        sprite.size = CGSize(width: 32, height: 32)
+        let playerSize = CGSize(width: 32, height: 32)
+        sprite = SKSpriteNode(texture: .placeholder(color: UIColor(red: 0.2, green: 0.6, blue: 1.0, alpha: 1), size: playerSize), size: playerSize)
+        // Archer icon
+        let icon = SKLabelNode(text: "🏹")
+        icon.fontSize = 18
+        icon.verticalAlignmentMode = .center
+        icon.horizontalAlignmentMode = .center
+        icon.zPosition = 1
+        sprite.addChild(icon)
         super.init()
 
         addChild(sprite)
@@ -89,23 +96,24 @@ final class Player: SKNode {
         sprite.removeAction(forKey: "anim")
         switch state {
         case .idle:
-            let frames = (0..<4).map { SKTexture(imageNamed: "archer_idle_0\($0)") }
-            sprite.run(.repeatForever(.animate(with: frames, timePerFrame: 0.125)), withKey: "anim")
+            let pulse = SKAction.sequence([.scale(to: 1.05, duration: 0.5), .scale(to: 1.0, duration: 0.5)])
+            sprite.run(.repeatForever(pulse), withKey: "anim")
         case .moving:
-            let frames = (0..<6).map { SKTexture(imageNamed: "archer_walk_0\($0)") }
-            sprite.run(.repeatForever(.animate(with: frames, timePerFrame: 0.1)), withKey: "anim")
+            break
         case .attacking:
-            let frames = (0..<4).map { SKTexture(imageNamed: "archer_attack_0\($0)") }
-            sprite.run(.animate(with: frames, timePerFrame: 0.083), withKey: "anim")
+            let flash = SKAction.sequence([.scale(to: 1.2, duration: 0.05), .scale(to: 1.0, duration: 0.05)])
+            sprite.run(flash, withKey: "anim")
         case .hurt:
-            let frames = (0..<2).map { SKTexture(imageNamed: "archer_hurt_0\($0)") }
             sprite.run(.sequence([
-                .animate(with: frames, timePerFrame: 0.125),
+                .colorize(with: .red, colorBlendFactor: 0.8, duration: 0.05),
+                .colorize(with: .white, colorBlendFactor: 0, duration: 0.1),
                 .run { [weak self] in self?.setState(.idle) }
             ]), withKey: "anim")
         case .dead:
-            let frames = (0..<6).map { SKTexture(imageNamed: "archer_death_0\($0)") }
-            sprite.run(.animate(with: frames, timePerFrame: 0.1), withKey: "anim")
+            sprite.run(.sequence([
+                .scale(to: 1.5, duration: 0.1),
+                .fadeOut(withDuration: 0.3)
+            ]), withKey: "anim")
         }
     }
 

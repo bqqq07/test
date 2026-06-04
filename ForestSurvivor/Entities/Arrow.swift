@@ -23,8 +23,9 @@ final class Arrow: SKSpriteNode {
     private var returning: Bool = false
 
     init() {
-        let texture = SKTexture(imageNamed: "arrow")
-        super.init(texture: texture, color: .clear, size: CGSize(width: 20, height: 8))
+        let arrowSize = CGSize(width: 20, height: 6)
+        let texture = SKTexture.placeholder(color: UIColor(red: 0.9, green: 0.7, blue: 0.3, alpha: 1), size: arrowSize)
+        super.init(texture: texture, color: .clear, size: arrowSize)
         zPosition = Constants.ZPositions.entities
 
         physicsBody = SKPhysicsBody(rectangleOf: size)
