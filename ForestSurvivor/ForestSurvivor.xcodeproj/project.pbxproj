@@ -1,0 +1,30 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* ─── Build Config ─── */
+		B001 /* Debug */   = { isa = XCBuildConfiguration; name = Debug;   buildSettings = { PRODUCT_NAME = ForestSurvivor; SWIFT_VERSION = 5.0; IPHONEOS_DEPLOYMENT_TARGET = 15.0; TARGETED_DEVICE_FAMILY = 1; SUPPORTED_PLATFORMS = iphoneos; INFOPLIST_FILE = Resources/Info.plist; PRODUCT_BUNDLE_IDENTIFIER = "com.yourname.forestsurvivors"; }; };
+		B002 /* Release */ = { isa = XCBuildConfiguration; name = Release; buildSettings = { PRODUCT_NAME = ForestSurvivor; SWIFT_VERSION = 5.0; IPHONEOS_DEPLOYMENT_TARGET = 15.0; TARGETED_DEVICE_FAMILY = 1; SUPPORTED_PLATFORMS = iphoneos; INFOPLIST_FILE = Resources/Info.plist; PRODUCT_BUNDLE_IDENTIFIER = "com.yourname.forestsurvivors"; SWIFT_OPTIMIZATION_LEVEL = "-O"; }; };
+
+/* ─── Config List ─── */
+		B003 = { isa = XCConfigurationList; buildConfigurations = (B001, B002); defaultConfigurationName = Release; };
+
+/* ─── Project ─── */
+		B004 = { isa = PBXProject; buildConfigurationList = B003; compatibilityVersion = "Xcode 14.0"; mainGroup = B005; targets = (B010); };
+		B005 = { isa = PBXGroup; children = (B006 B007 B008 B009); };
+		B006 = { isa = PBXGroup; name = App;      path = App;      children = (); };
+		B007 = { isa = PBXGroup; name = Scenes;   path = Scenes;   children = (); };
+		B008 = { isa = PBXGroup; name = Entities; path = Entities; children = (); };
+		B009 = { isa = PBXGroup; name = Resources;path = Resources;children = (); };
+
+/* ─── Target ─── */
+		B010 = { isa = PBXNativeTarget; name = ForestSurvivor; productType = "com.apple.product-type.application"; buildConfigurationList = B003; buildPhases = (B011 B012); };
+		B011 = { isa = PBXSourcesBuildPhase; files = (); };
+		B012 = { isa = PBXResourcesBuildPhase; files = (); };
+	};
+	rootObject = B004;
+}

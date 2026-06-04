@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>Forest Survivor</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.yourname.forestsurvivors</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+    </array>
+    <key>UIRequiresFullScreen</key>
+    <true/>
+    <key>UIStatusBarHidden</key>
+    <true/>
+
+    <!-- AdMob — replace with your real App ID -->
+    <key>GADApplicationIdentifier</key>
+    <string>ca-app-pub-XXXXXXXXXXXXXXXX~XXXXXXXXXX</string>
+
+    <key>NSUserTrackingUsageDescription</key>
+    <string>لتحسين تجربتك وعرض إعلانات أكثر صلة</string>
+
+    <key>UILaunchStoryboardName</key>
+    <string>LaunchScreen</string>
+</dict>
+</plist>
