@@ -72,13 +72,23 @@ final class UpgradeScene: SKScene {
     }
 
     private func pickUpgrade(_ upgrade: UpgradeData) {
+        // Prevent double-tap
+        isUserInteractionEnabled = false
+
         let flash = SKAction.sequence([
             .fadeAlpha(to: 0.5, duration: 0.1),
-            .fadeAlpha(to: 1.0, duration: 0.1)
+            .fadeAlpha(to: 1.0, duration: 0.1),
+            .run { [weak self] in
+                guard let self = self else { return }
+                self.onPicked(upgrade)
+                // Return to previous GameScene if it exists in the view stack
+                if let view = self.view {
+                    let gameScene = GameScene(size: self.size)
+                    gameScene.scaleMode = self.scaleMode
+                    view.presentScene(gameScene, transition: .crossFade(withDuration: 0.2))
+                }
+            }
         ])
-        run(.sequence([flash, .run { [weak self] in
-            self?.onPicked(upgrade)
-            self?.view?.presentScene(nil)
-        }]))
+        run(flash)
     }
 }

@@ -487,14 +487,16 @@ final class GameScene: SKScene, SKPhysicsContactDelegate {
             return
         }
 
-        let overlay = UpgradeScene(size: size, upgrades: upgrades) { [weak self] picked in
+        // Show as overlay node on top of GameScene (no scene switch)
+        let overlay = UpgradeOverlayNode(size: size, upgrades: upgrades) { [weak self] picked in
+            guard let self = self else { return }
             GameManager.shared.applyUpgrade(picked)
-            self?.isGamePaused = false
+            AudioManager.shared.playSFX("upgrade_select.wav", on: self)
             AudioManager.shared.resumeBGM()
-            AudioManager.shared.playSFX("upgrade_select.wav", on: self!)
+            self.isGamePaused = false
         }
-        overlay.scaleMode = scaleMode
-        view?.presentScene(overlay, transition: .crossFade(withDuration: 0.3))
+        overlay.zPosition = 100
+        camera?.addChild(overlay)
     }
 
     // MARK: - Minute Bonus
